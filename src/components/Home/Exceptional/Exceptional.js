@@ -14,7 +14,7 @@ const Exceptional = () => {
                 <p className="text-secondary">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi quidem odit aperiam, sunt eveniet et explicabo ea. Id dolorum molestiae qui vero illo quas quaerat eligendi fugiat reiciendis, omnis obcaecati. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium facere culpa corporis aliquam architecto modi quisquam nihil quam sit. Voluptas.</p>
 
                 <br /><br />
-                <button className="btn-primary">Learn More</button>
+                <button className="btn btn-primary basic__button">Learn More</button>
             </div>
             </div>
         </section>

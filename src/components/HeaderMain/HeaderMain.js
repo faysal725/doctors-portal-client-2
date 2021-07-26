@@ -1,5 +1,6 @@
 import React from 'react';
 import chair from '../../images/chair.png';
+import './HeaderMain.css'
 
 const HeaderMain = () => {
     return (
@@ -8,7 +9,7 @@ const HeaderMain = () => {
                 <h1 style={{color:"#203047"}}>your new smile <br /> starts here</h1>
                 <p className="text-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, possimus rerum qui alias autem ut?</p>
                 
-                <div className="btn btn-primary">Get appointment</div>
+                <div className="btn basic__button">Get appointment</div>
             </div>
             <div className="col-md-6">
                 <img src={chair} alt="" className="img-fluid" />

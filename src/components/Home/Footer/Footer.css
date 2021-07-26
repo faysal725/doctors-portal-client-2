@@ -1,0 +1,35 @@
+
+.footer__content h5{
+    color: #13D0CF;
+}
+
+
+.footer__content li{
+    list-style-type: none;
+}
+
+
+.footer__icon{
+    color: #13D0CF;
+    border: 1px solid #13D0CF;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+
+.footer__icon:hover{
+    background-image: linear-gradient(50deg, #13d0b7, #7ecaca);
+    color: white;
+}
+
+.call__button{
+    height: 60px;
+    width: 200px;
+    color: white;
+    background-image: linear-gradient(50deg, #13d0b7, #7ecaca);
+    border:none
+}

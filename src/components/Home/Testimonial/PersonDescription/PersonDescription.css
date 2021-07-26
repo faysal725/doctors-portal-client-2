@@ -1,0 +1,13 @@
+.personDescription__full{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.349);
+    margin-left: 15px;
+}
+.person__name h6{
+    color: #62C8C8;
+}
+
+
+.PersonDescription__image{
+    height: 60px;
+    width: 60px;
+}
