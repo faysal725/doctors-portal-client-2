@@ -1,0 +1,45 @@
+
+
+.AppointmentForm__inputs input{
+    width: 80%;
+    height: 40px;
+    border-radius: 2px;
+}
+
+
+
+
+
+
+
+/* 
+<form  onSubmit={handleSubmit(onSubmit)}  className="AppointmentForm__inputs">
+<h2 className="text-brand">{appointmentOn}</h2>
+<p className="text-secondary text-center"><small >{date.toDateString()}</small></p>
+<br />
+<br />
+    <input placeholder="Your Name" {...register("name", {required: true})} />
+    {errors.name && <span>This field is required</span>}
+
+    <br /><br />
+    <input placeholder="Phone Number" {...register("Phone-Number", {required: true})} />
+    <br /><br />
+    
+    <input placeholder="Email" type="text" {...register("Email", {required: true})} />
+    <br /><br />
+   
+
+
+    <input placeholder="age" {...register("age", {required: true})} />
+    <br /><br />
+    <input placeholder="weight" type="number" {...register("weight", {required: true})} />
+    <br /><br />
+    
+    <select {...register("gender")}>
+      <option value="female">female</option>
+      <option value="male">male</option>
+      <option value="other">other</option>
+    </select>
+    <br /><br />
+    <input className="btn-brand" type="submit" />
+  </form> */

@@ -33,6 +33,9 @@ const Navbar = () => {
           <a class="nav-link ms-5 text-white" href="#">Contact Us</a>
         </li>
         
+        <li class="nav-item">
+          <a class="nav-link ms-5 text-white" href="/login">Login</a>
+        </li>
       </ul>
     </div>
   </div>
