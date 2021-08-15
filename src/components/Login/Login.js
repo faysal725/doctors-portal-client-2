@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Login.css'
 import { useForm } from "react-hook-form";
 import loginImage from '../../images/loginImage.png'
@@ -6,11 +6,33 @@ import { useState } from 'react';
 import firebaseConfig from './firebase.config';
 import firebase from "firebase/app";
 import "firebase/auth";
+import { UserContext } from '../../App';
+import { useHistory, useLocation } from 'react-router-dom';
 
 
 
 const Login = () => {
     const [login, setLogin] = useState(false)
+
+    const [loggedInUser,  setLoggedInUser] = useContext(UserContext)
+    const history = useHistory();
+    const location = useLocation()
+
+
+
+    let { from } = location.state || { from: { pathname: "/" } };
+
+
+    const [user, setUser] = useState({
+        isSignedIn:false,
+        name:'',
+        email:''
+    })
+
+
+
+    console.log(loggedInUser)
+
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data =>{
@@ -36,9 +58,20 @@ const Login = () => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
         // Signed in 
-        var user = userCredential.user.email;
-        console.log("register done", user)
-        console.log("register done", userCredential.user)
+        const email = userCredential.user.email;
+        const Username = name;
+
+        setUser({
+            isSignedIn:true,
+            name: Username,
+            email: email
+        })
+        setLoggedInUser({
+            isSignedIn:true,
+            name: Username,
+            email: email
+        })
+        history.replace(from);
         })
         .catch((error) => {
         var errorCode = error.code;
@@ -56,8 +89,21 @@ const Login = () => {
             firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
             // Signed in
-            var user = userCredential.user.email;
-            console.log("login done", user)
+            const email = userCredential.user.email;
+            console.log("login done", email)
+            setUser({
+                isSignedIn:true,
+                email: email
+            })
+
+            setLoggedInUser({
+                isSignedIn:true,
+                email: email
+            })
+            history.replace(from);
+
+
+            
             // ...
             })
             .catch((error) => {
@@ -68,16 +114,6 @@ const Login = () => {
         }
 
 
-
-        const signout = () =>{
-            firebase.auth().signOut().then(() => {
-                console.log("sign out successfull")
-                window.location.reload();
-              }).catch((error) => {
-                console.log(error)
-                // An error happened.
-              });
-        }
 
 
     if (firebase.apps.length === 0) {
@@ -140,7 +176,6 @@ const Login = () => {
                             </>
                         }
                         <br />
-                        <button onClick={() => signout()}>Sign out</button>
                     </form>
                     
             </div>

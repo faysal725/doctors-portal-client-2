@@ -13,11 +13,23 @@ import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Patients from './components/Dashboard/Patients/Patients';
 import DashboardAll from './components/Dashboard/DashboardAll/DashboardAll';
 import Prescription from './components/Dashboard/Prescription/Prescription';
+import { createContext, useState } from 'react';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+
+
+
+export const UserContext = createContext();
+export const LogoutContext = createContext()
+
 
 
 function App() {
+      const [loggedInUser, setLoggedInUser] = useState([])
   return (
-    <Router>
+
+   <UserContext.Provider value = {[loggedInUser, setLoggedInUser]}>
+         <h1>login email {loggedInUser.email}</h1>
+   <Router>
       <Switch>
         <Route exact path="/">
               <Home></Home>
@@ -25,23 +37,24 @@ function App() {
         <Route path="/appointment">
               <Appointment></Appointment>
         </Route>
-        <Route path="/dashboard/dashboardAll">
+        <PrivateRoute path="/dashboard/dashboardAll">
               <DashboardAll></DashboardAll>
-        </Route>
-        <Route path="/dashboard/prescription">
+        </PrivateRoute>
+        <PrivateRoute path="/dashboard/prescription">
               <Prescription></Prescription>
-        </Route>
-        <Route path="/dashboard/appointment">
+        </PrivateRoute>
+        <PrivateRoute path="/dashboard/appointment">
               <Dashboard></Dashboard>
-        </Route>
-        <Route path="/dashboard/patients">
+        </PrivateRoute>
+        <PrivateRoute path="/dashboard/patients">
               <Patients></Patients>
-        </Route>
+        </PrivateRoute>
         <Route path="/login">
               <Login></Login>
         </Route>
       </Switch>
     </Router>
+    </UserContext.Provider>
   );
 }
 

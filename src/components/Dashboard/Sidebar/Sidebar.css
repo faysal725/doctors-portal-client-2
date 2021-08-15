@@ -15,6 +15,7 @@
 }
 
 .sidebar__logout:hover{
+    cursor: pointer;
     color: #11CFDC;
     background-color: white;
     border-radius: 6px;
