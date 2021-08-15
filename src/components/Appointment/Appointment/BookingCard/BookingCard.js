@@ -13,7 +13,7 @@ const BookingCard = ({booking,date}) => {
       setIsOpen(false);
     }
 
-    console.log(booking)
+    //console.log(booking)
     return (
         <div className="col-md-4 mb-5">
             <div className="card p-3">

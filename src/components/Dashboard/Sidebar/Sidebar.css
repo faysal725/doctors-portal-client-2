@@ -1,0 +1,21 @@
+.sidebar__items{
+    margin-left: 25px;
+}
+.sidebar__items h5{
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+
+
+
+.sidebar__logout h4{
+    height: 50px;
+    padding-top: 10px;
+}
+
+.sidebar__logout:hover{
+    color: #11CFDC;
+    background-color: white;
+    border-radius: 6px;
+}

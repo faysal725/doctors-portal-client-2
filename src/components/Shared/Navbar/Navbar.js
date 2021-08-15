@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
     return (
@@ -22,7 +24,7 @@ const Navbar = () => {
 
 
         <li class="nav-item">
-          <a class="nav-link ms-5 text-white" href="#">Reviews</a>
+          <a class="nav-link ms-5 text-white" href="#"><Link style={{color:"white", textDecoration:"none"}} to="/dashboard/dashboardAll">Dashboard</Link></a>
         </li>
 
         <li class="nav-item">

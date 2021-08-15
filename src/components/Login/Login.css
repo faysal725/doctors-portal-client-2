@@ -1,0 +1,20 @@
+.login__full{
+    height: 900px;
+}
+
+
+.login__form{
+    padding-top: 20px;
+    align-items: center;
+    height: 600px;
+    margin: 40px;
+}
+
+
+
+.login__form input{
+    height: 40px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+}

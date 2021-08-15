@@ -1,0 +1,14 @@
+.appointment__details{
+    padding-top: 20px;
+}
+.calender{
+    width: 100%;
+    height: 400px;
+    font-size: larger;
+    border: none;
+}
+
+.dashboard__sidebar{
+    background-image: linear-gradient(50deg ,#11CFDC, #18D2B3);
+    height: 900px;
+}

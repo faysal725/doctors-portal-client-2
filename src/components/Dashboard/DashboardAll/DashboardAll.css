@@ -1,0 +1,19 @@
+.dashboard__update{
+    color:white;
+    height: 90px;
+    align-items: center;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+
+.patient__table{
+    border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.patient__table th,td{
+    text-align: left;
+  padding: 8px;
+}
