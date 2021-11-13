@@ -15,7 +15,7 @@ const DashboardAll = () => {
     const [grantedAppointment, setGrantedAppointment] = useState([])
     
     useEffect(() => {
-        fetch('http://localhost:5000/patients')
+        fetch('http://lit-shore-05628.herokuapp.com/patients')
         .then(res => res.json())
         .then(data => setTotalAppointment(data))
     }, [])

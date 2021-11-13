@@ -15,11 +15,11 @@ import DashboardAll from './components/Dashboard/DashboardAll/DashboardAll';
 import Prescription from './components/Dashboard/Prescription/Prescription';
 import { createContext, useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AddDoctor from './components/Dashboard/AddDoctor/AddDoctor';
 
 
 
 export const UserContext = createContext();
-export const LogoutContext = createContext()
 
 
 
@@ -48,6 +48,10 @@ function App() {
         <PrivateRoute path="/dashboard/patients">
               <Patients></Patients>
         </PrivateRoute>
+        <Route path="/dashboard/addDoctor">
+              <AddDoctor></AddDoctor>
+        </Route>
+        
         <Route path="/login">
               <Login></Login>
         </Route>

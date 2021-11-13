@@ -20,7 +20,7 @@ const Login = () => {
 
 
 
-    let { from } = location.state || { from: { pathname: "/" } };
+    let { from } = location.state || { from: { pathname: "/dashboard/dashboardAll" } };
 
 
     const [user, setUser] = useState({

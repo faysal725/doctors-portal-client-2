@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import AppointmentByDate from '../AppointmentByDate/AppointmentByDate';
 import Sidebar from '../Sidebar/Sidebar';
 import Calendar from 'react-calendar';
 import './Dashboard.css'
 import 'react-calendar/dist/Calendar.css';
+import { UserContext } from '../../../App';
 
 const containerStyle = {
     backgorundColor: "#F4FDFB", 
@@ -11,6 +12,7 @@ const containerStyle = {
 
 
 const Dashboard = () => {
+    const [loggedInUser, setLoggedInUser]= useContext(UserContext)
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [appointments, setAppointments]  = useState([])
     
@@ -18,17 +20,15 @@ const Dashboard = () => {
        
         const date1 = changeDateFormat(date)
 
-        // console.log(typeof(date), date)
-        // console.log(typeof(date1), date1)
         setSelectedDate(date1)
 
     }
 
     useEffect( () => {
-        fetch('http://localhost:5000/appointmentsByDate', {
+        fetch('http://lit-shore-05628.herokuapp.com/appointmentsByDate', {
             method: 'POST',
             headers:{'content-type': 'application/json'},
-            body: JSON.stringify({date1: selectedDate})
+            body: JSON.stringify({date1: selectedDate, email: loggedInUser.email})
         })
         .then(res => res.json())
         .then(data => setAppointments(data))
