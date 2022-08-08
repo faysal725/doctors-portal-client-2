@@ -1,6 +1,6 @@
 # This project is made for dentists
 
-Live site: https://dentists-portal.netlify.app/
+Live site: https://doctors-portal-client-2.vercel.app/
 
 • eye catching Design.
 • React Hooks implementation.
